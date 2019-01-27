@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TopBarBtnLeft" parent="@style/TopBarBtn">
+        <item name="android:layout_gravity">left|center</item>
+    </style>
+
+    <style name="TopBarBtn">
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="TopBarText">
+        <item name="android:textColor">@color/topbar_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="TopBarBtnRight" parent="@style/TopBarBtn">
+        <item name="android:layout_gravity">right|center</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!--photo-->
+    <style name="anim_popup_dir">
+        <item name="android:windowEnterAnimation">@anim/photo_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/photo_slide_out</item>
+    </style>
+
+</resources>

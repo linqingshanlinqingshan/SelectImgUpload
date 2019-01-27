@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <FrameLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zpx98dp"
+        android:background="@color/bg_topbar"
+        >
+
+        <ImageView
+            android:id="@+id/top_bar_left"
+            android:background="@drawable/selector_title_click"
+            android:src="@drawable/selector_topbar_left"
+            style="@style/TopBarBtnLeft"
+            android:visibility="visible"
+            android:padding="@dimen/zpx30dp"
+            />
+        <TextView
+            android:id="@+id/top_bar_title"
+            style="@style/TopBarText"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/zpx30dp"
+            />
+
+        <TextView
+            android:id="@+id/top_bar_right"
+            style="@style/TopBarBtnRight"
+            android:layout_width="wrap_content"
+            android:visibility="visible"
+            android:textSize="@dimen/zpx30dp"
+            android:textColor="@color/topbar_text"
+            android:layout_marginRight="@dimen/zpx30dp"
+            />
+        <ImageView
+            android:id="@+id/iv_top_bar_right"
+            android:background="@drawable/selector_title_click"
+            style="@style/TopBarBtnRight"
+            android:layout_marginRight="@dimen/zpx30dp"
+            android:src="@mipmap/ic_launcher"
+            android:visibility="gone"
+            />
+
+        <EditText
+            android:id="@+id/top_bar_et"
+            android:visibility="gone"
+            style="@style/TopBarBtnRight"
+            android:text="怎么了"
+            />
+
+        <View
+            android:id="@+id/top_bar_line"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#e0e0e0"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center|bottom"
+            />
+
+    </FrameLayout>
+
+</merge>
