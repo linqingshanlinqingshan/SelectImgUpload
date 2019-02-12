@@ -5,10 +5,12 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
@@ -213,10 +215,38 @@ public class ImageFolderActivity extends AppCompatActivity implements ListImageD
                 if (!file.exists()) {
                     file.mkdirs(); // 创建文件夹
                 }
-                Uri imageUri = Uri.fromFile(new File(photoName));
-                System.out.println("imageUri----" + imageUri.toString());
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-                startActivityForResult(intent, REQUEST_TAKE_PHOTO);
+
+
+                try {
+
+                    Uri uri;
+                    if (Build.VERSION.SDK_INT >= 24) {
+                        uri = FileProvider.getUriForFile(getApplicationContext(), getPackageName() + ".fileprovider", new File(photoName));
+                    } else {
+                        uri = Uri.fromFile(new File(photoName));
+                    }
+
+                    LogUtil.logError("uri = ", uri.toString());
+
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+                    startActivityForResult(intent, REQUEST_TAKE_PHOTO);
+
+                } catch (Exception e) {
+                    LogUtil.logError("uri e = ", e.getMessage());
+                }
+
+//                try {
+//
+//                    Uri imageUri = Uri.fromFile(new File(photoName));
+//                    LogUtil.logDebug("imageUri", imageUri.toString());
+//
+//                    intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+//                    startActivityForResult(intent, REQUEST_TAKE_PHOTO);
+//
+//                } catch (Exception e) {
+//                    LogUtil.logError("imageUri e = ", e.getMessage());
+//                }
+
             }
         });
         //头部显示
