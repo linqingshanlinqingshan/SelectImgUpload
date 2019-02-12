@@ -23,7 +23,7 @@ import java.util.List;
 import io.reactivex.functions.Consumer;
 
 /**
- * 选择一张或者多张图片
+ * 选择一张或者多张图片 test lin
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
